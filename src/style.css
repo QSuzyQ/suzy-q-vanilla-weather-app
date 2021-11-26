@@ -5,6 +5,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+form {
+  margin-bottom: 50px;
+}
+
 h1 {
   font-size: 34px;
 }
@@ -31,6 +35,18 @@ ul {
   position: relative;
   bottom: -65px;
 }
+
+.btn-outline-secondary {
+  color: whitesmoke;
+  border-color: whitesmoke;
+}
+
+.btn-outline-secondary:hover {
+  color: whitesmoke;
+  background-color: plum;
+  border-color: plum;
+}
+
 .container {
   background: linear-gradient(
     180deg,
@@ -75,12 +91,13 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .weather-app {
   color: whitesmoke;
   position: relative;
-  padding: 100px 60px;
+  padding: 60px 60px;
   height: 500px;
 }
 
@@ -97,5 +114,5 @@ ul {
   top: -90px;
 }
 #weather-temperature-row {
-  height: 110px;
+  height: 100px;
 }
