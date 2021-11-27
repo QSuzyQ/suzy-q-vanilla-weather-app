@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Vanilla Weather App</title>
   </head>
@@ -44,14 +45,15 @@
               <div class="col-9">
                 <div class="row">
                   <div class="col-9">
-                    <h1>Zagreb</h1>
-                    <h2>November 25, 2021, 00:38</h2>
+                    <h1 id="city"></h1>
+                    <h2 id="date"></h2>
+                    <h2 id="time"></h2>
                   </div>
                 </div>
               </div>
 
               <div class="col-3 weather-temperature">
-                <span id="temperature">11</span>
+                <span id="temperature"></span>
                 <small class="units">
                   <a href="#">°C</a> | <a href="#">°F</a>
                 </small>
@@ -64,12 +66,13 @@
                     src="https://st.wetteronline.de/dr/1.1.324/city/prozess/graphiken/symbole/standard/farbe/svg/centered/bdr2__.svg"
                     alt="rain"
                   />
-                  <div class="description">Rain</div>
+                  <div id="description"></div>
                 </div>
                 <div class="col-6">
                   <ul>
-                    <li>Humidity: 80%</li>
-                    <li>Wind: 5 km/h</li>
+                    <li>Feels like: <span id="feels-like"></span></span>°C</li>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
                   </ul>
                 </div>
               </div>

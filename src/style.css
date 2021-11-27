@@ -61,9 +61,13 @@ ul {
   border-radius: 10px;
 }
 
-.description {
+#description {
   font-size: 20px;
   padding-left: 10px;
+}
+
+#description::first-letter {
+  text-transform: capitalize;
 }
 
 .weather-app-border {
