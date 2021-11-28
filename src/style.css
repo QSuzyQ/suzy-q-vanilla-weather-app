@@ -105,11 +105,9 @@ ul {
   height: 500px;
 }
 
-.weather-temperature #temperature {
-  font-size: 100px;
-  font-weight: 100;
-  position: relative;
-  top: -35px;
+.weather-temperature .active {
+  color: whitesmoke;
+  cursor: default;
 }
 
 .weather-temperature .units {
@@ -117,6 +115,14 @@ ul {
   position: relative;
   top: -90px;
 }
+
+.weather-temperature #temperature {
+  font-size: 100px;
+  font-weight: 100;
+  position: relative;
+  top: -35px;
+}
+
 #weather-temperature-row {
   height: 100px;
 }
