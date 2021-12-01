@@ -74,7 +74,7 @@ function displayForecast(response) {
                     <div class="weather-forecast-temperatures">
                       <span class="weather-forecast-temperature-max">${Math.round(
                         forecastDay.temp.max
-                      )}° </span>
+                      )}°  </span>
                       <span class="weather-forecast-temperature-min">${Math.round(
                         forecastDay.temp.min
                       )}°</span>
@@ -139,45 +139,13 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let feelsLikeElement = document.querySelector("#feels-like");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  let feelsLikeFahrenheit = (feelsLikeTemperature * 9) / 5 + 32;
-  feelsLikeElement.innerHTML = Math.round(feelsLikeFahrenheit);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  let feelsLikeElement = document.querySelector("#feels-like");
-  feelsLikeElement.innerHTML = Math.round(feelsLikeTemperature);
-}
-
 let dateElement = document.querySelector("#date");
 let timeElement = document.querySelector("#time");
 let actualDate = new Date();
 dateElement.innerHTML = formatDate(actualDate)[0];
 timeElement.innerHTML = formatDate(actualDate)[1];
 
-let celsiusTemperature = null;
-
-let feelsLikeTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Zell am See");
