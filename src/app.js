@@ -123,6 +123,15 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = `066545da4c8046912b00adb2744905ad`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+  console.log(apiUrl);
+}
+
 function search(city) {
   let apiKey = `066545da4c8046912b00adb2744905ad`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -136,6 +145,11 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
 let dateElement = document.querySelector("#date");
 let timeElement = document.querySelector("#time");
 let actualDate = new Date();
@@ -144,5 +158,8 @@ timeElement.innerHTML = formatDate(actualDate)[1];
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let buttonCurrentWeather = document.querySelector("#button-current-weather");
+buttonCurrentWeather.addEventListener("click", getCurrentLocation);
 
 search("Zell am See");
